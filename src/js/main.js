@@ -221,6 +221,9 @@ function startProcess() {
                     case 'privacy_policy':
                         TABS.staticTab.initialize('privacy_policy', content_ready);
                         break;
+                    case 'options':
+                        TABS.options.initialize(content_ready);
+                        break;
                     case 'firmware_flasher':
                         TABS.firmware_flasher.initialize(content_ready);
                         break;
@@ -300,117 +303,6 @@ function startProcess() {
     });
 
     $('#tabs ul.mode-disconnected li a:first').click();
-
-    // options
-    $('a#options').click(function () {
-        const el = $(this);
-
-        if (!el.hasClass('active')) {
-            el.addClass('active');
-            el.after('<div id="options-window"></div>');
-
-            $('div#options-window').load('./tabs/options.html', function () {
-                // translate to user-selected language
-                i18n.localizePage();
-
-                ConfigStorage.get('permanentExpertMode', function (result) {
-                    if (result.permanentExpertMode) {
-                        $('div.permanentExpertMode input').prop('checked', true);
-                    }
-
-                    $('div.permanentExpertMode input').change(function () {
-                        const checked = $(this).is(':checked');
-
-                        ConfigStorage.set({'permanentExpertMode': checked});
-
-                        $('input[name="expertModeCheckbox"]').prop('checked', checked).change();
-                    }).change();
-                });
-
-                ConfigStorage.get('rememberLastTab', function (result) {
-                    $('div.rememberLastTab input')
-                        .prop('checked', !!result.rememberLastTab)
-                        .change(function() { ConfigStorage.set({rememberLastTab: $(this).is(':checked')}); })
-                        .change();
-                });
-
-                if (GUI.operating_system !== 'ChromeOS') {
-                    ConfigStorage.get('checkForConfiguratorUnstableVersions', function (result) {
-                        if (result.checkForConfiguratorUnstableVersions) {
-                            $('div.checkForConfiguratorUnstableVersions input').prop('checked', true);
-                        }
-
-                        $('div.checkForConfiguratorUnstableVersions input').change(function () {
-                            const checked = $(this).is(':checked');
-
-                            ConfigStorage.set({'checkForConfiguratorUnstableVersions': checked});
-
-                            checkForConfiguratorUpdates();
-                        });
-                    });
-                } else {
-                    $('div.checkForConfiguratorUnstableVersions').hide();
-                }
-
-                ConfigStorage.get('analyticsOptOut', function (result) {
-                    if (result.analyticsOptOut) {
-                        $('div.analyticsOptOut input').prop('checked', true);
-                    }
-
-                    $('div.analyticsOptOut input').change(function () {
-                        const checked = $(this).is(':checked');
-
-                        ConfigStorage.set({'analyticsOptOut': checked});
-
-                        checkSetupAnalytics(function (analyticsService) {
-                            if (checked) {
-                                analyticsService.sendEvent(analyticsService.EVENT_CATEGORIES.APPLICATION, 'OptOut');
-                            }
-
-                            analyticsService.setOptOut(checked);
-
-                            if (!checked) {
-                                analyticsService.sendEvent(analyticsService.EVENT_CATEGORIES.APPLICATION, 'OptIn');
-                            }
-                        });
-                    }).change();
-                });
-
-                $('div.cliAutoComplete input')
-                    .prop('checked', CliAutoComplete.configEnabled)
-                    .change(function () {
-                        const checked = $(this).is(':checked');
-
-                        ConfigStorage.set({'cliAutoComplete': checked});
-                        CliAutoComplete.setEnabled(checked);
-                    }).change();
-
-                $('#darkThemeSelect')
-                    .val(DarkTheme.configEnabled)
-                    .change(function () {
-                        const value = parseInt($(this).val());
-
-                        ConfigStorage.set({'darkTheme': value});
-                        setDarkTheme(value);
-                    }).change();
-
-                function close_and_cleanup(e) {
-                    if (e.type === 'click' && !$.contains($('div#options-window')[0], e.target) || e.type === 'keyup' && e.keyCode === 27) {
-                        $(document).unbind('click keyup', close_and_cleanup);
-
-                        $('div#options-window').slideUp(250, function () {
-                            el.removeClass('active');
-                            $(this).empty().remove();
-                        });
-                    }
-                }
-
-                $(document).bind('click keyup', close_and_cleanup);
-
-                $(this).slideDown(250);
-            });
-        }
-    });
 
     // listen to all input change events and adjust the value within limits if necessary
     $("#content").on('focus', 'input[type="number"]', function () {

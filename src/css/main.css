@@ -406,73 +406,6 @@ input[type="number"]::-webkit-inner-spin-button {
     background-image: -webkit-linear-gradient(top, transparent, rgba(0, 0, 0, 0.45));
 }
 
-#options {
-    float: right;
-    width: 20px;
-    height: 20px;
-    margin-top: 10px;
-    margin-right: 10px;
-    background-image: url(../images/CF_settings_white.svg);
-    background-position: -1px -1px;
-    background-repeat: no-repeat;
-    opacity: 0.4;
-}
-
-#options:hover {
-    opacity: 0.65;
-}
-
-#options.active {
-    opacity: 0.65;
-}
-
-#options.active:hover {
-    opacity: 0.75;
-}
-
-#options-window {
-    display: none;
-    position: fixed;
-    right: 35px;
-    top: 25px;
-    padding: 5px;
-    line-height: 20px;
-    border: 1px solid var(--subtleAccent);
-    background-color: white;
-    border-radius: 5px;
-    z-index: 10000;
-}
-
-#options-window input {
-    float: left;
-    margin-top: 4px;
-    margin-right: 5px;
-}
-
-#options-window .separator {
-    padding-bottom: 10px;
-    margin-bottom: 10px;
-    border-bottom: 2px solid var(--subtleAccent);
-}
-
-#options-window .dropdown {
-    float: left;
-    width: auto;
-    margin-right: 5px;
-}
-
-#options-window select {
-    margin-right: 2px;
-    background: var(--boxBackground);
-    color: var(--defaultText);
-    border: 1px solid var(--subtleAccent);
-    border-radius: 3px;
-}
-
-#options-window span {
-    vertical-align: text-bottom;
-}
-
 /* Log setup*/
 #log {
     margin-bottom: 0px;
@@ -2248,13 +2181,4 @@ input {
 
 .noUi-connect {
     box-shadow: none;
-}
-
-
-/** Responsive design **/
-@media all and (max-width: 727px) {
-    /** Phones **/
-    html {
-        zoom: 60%;
-    }
 }

@@ -19,6 +19,7 @@ var GUI_control = function () {
         'changelog',
         'firmware_flasher',
         'privacy_policy',
+        'options',
         'help'
     ];
     this.defaultAllowedFCTabsWhenConnected = [
