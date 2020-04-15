@@ -11,10 +11,10 @@ function startApplication() {
     chrome.app.window.create('main.html', {
         id: 'main-window',
         frame: 'chrome',
-        innerBounds: {
+        /**innerBounds: {
             minWidth: 1024,
             minHeight: 550
-        }
+        }*/
     }, function (createdWindow) {
         if (getChromeVersion() >= 54) {
             createdWindow.icon = 'images/bf_icon_128.png';

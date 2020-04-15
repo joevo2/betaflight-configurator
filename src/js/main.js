@@ -125,7 +125,7 @@ function startProcess() {
         chromeVersion: window.navigator.appVersion.replace(/.*Chrome\/([0-9.]*).*/, "$1"),
         configuratorVersion: CONFIGURATOR.version }));
 
-    $('#logo .version').text(CONFIGURATOR.version);
+    $('#logo .version, #tab_logoversion .version').text(CONFIGURATOR.version);
     updateStatusBarVersion();
     updateTopBarVersion();
 
@@ -148,6 +148,8 @@ function startProcess() {
             {lastTab: $(this).attr("class").split(' ')[0]}
         );
     });
+
+    UI_PHONES.init();
 
     const ui_tabs = $('#tabs > ul');
     $('a', ui_tabs).click(function () {
@@ -379,8 +381,7 @@ function startProcess() {
                 command_log.scrollTop($('div.wrapper', command_log).height());
             });
             $("#log").removeClass('active');
-            $("#content").removeClass('logopen');
-            $(".tab_container").removeClass('logopen');
+            $("#tab-content-container").removeClass('logopen');
             $("#scrollicon").removeClass('active');
             ConfigStorage.set({'logopen': false});
 
@@ -388,8 +389,7 @@ function startProcess() {
         } else {
             $("#log").animate({height: 111}, 200);
             $("#log").addClass('active');
-            $("#content").addClass('logopen');
-            $(".tab_container").addClass('logopen');
+            $("#tab-content-container").addClass('logopen');
             $("#scrollicon").addClass('active');
             ConfigStorage.set({'logopen': true});
 
@@ -655,7 +655,7 @@ function updateTopBarVersion(firmwareVersion, firmwareId, hardwareId) {
 
     const versionText = `${configuratorVersion}<br />${firmwareVersionAndId}<br />${targetVersion}`;
 
-    $('#logo .logo_text').html(versionText);
+    $('#logo .logo_text, #tab_logoversion .version').html(versionText);
 }
 
 function updateStatusBarVersion(firmwareVersion, firmwareId, hardwareId) {

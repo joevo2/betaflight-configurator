@@ -106,6 +106,7 @@ function initializeSerialBackend() {
     });
 
     // auto-connect
+    GUI.switchery();
     ConfigStorage.get('auto_connect', function (result) {
         if (result.auto_connect === 'undefined' || result.auto_connect) {
             // default or enabled by user
@@ -147,6 +148,8 @@ function initializeSerialBackend() {
 }
 
 function finishClose(finishedCallback) {
+    UI_PHONES.reset();
+
     var wasConnected = CONFIGURATOR.connectionValid;
 
     analytics.sendEvent(analytics.EVENT_CATEGORIES.FLIGHT_CONTROLLER, 'Disconnected');
@@ -448,6 +451,8 @@ function finishOpen() {
     if (semver.lt(CONFIG.apiVersion, "1.4.0")) {
         GUI.allowedTabs.splice(GUI.allowedTabs.indexOf('led_strip'), 1);
     }
+
+    UI_PHONES.reset();
 
     onConnect();
 
