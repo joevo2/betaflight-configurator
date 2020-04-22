@@ -111,6 +111,13 @@ TABS.cli.initialize = function (callback) {
         // translate to user-selected language
         i18n.localizePage();
 
+        if ($(window).width() < 575) {
+            const backdropHeight = $('.note').height() + 22 + 38;
+            $('.backdrop').css('height', `calc(100% - ${backdropHeight}px)`);
+        }
+
+        UI_PHONES.initToolbar();
+
         CONFIGURATOR.cliActive = true;
 
         var textarea = $('.tab-cli textarea[name="commands"]');

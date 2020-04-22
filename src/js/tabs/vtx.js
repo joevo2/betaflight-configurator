@@ -41,6 +41,8 @@ TABS.vtx.initialize = function (callback) {
         // translate to user-selected language
         i18n.localizePage();
 
+        UI_PHONES.initToolbar();
+
         self.updating = false;
         GUI.content_ready(callback);
     }

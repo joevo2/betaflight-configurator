@@ -1,6 +1,44 @@
 'use strict';
 
+const cordovaUI = {
+    uiZoom: 1,
+    init: async function() {
+        const self = this;
+        let length = $(window).width();
+        if (window.innerHeight > length) {
+            length = $(window).height();
+        }
+        if (length < 1024) {
+            console.log(length);
+            self.uiZoom = length/1024;
+        }
+        ConfigStorage.get('cordovaForceComputerUI', function (result) {
+            if (result.cordovaForceComputerUI === undefined) {
+                if (length < 1024) {
+                    ConfigStorage.set({'cordovaForceComputerUI': false});
+                } else {
+                    ConfigStorage.set({'cordovaForceComputerUI': true});
+                }
+            }
+        });
+        self.set();
+    },
+    set: function() {
+        const self = this;
+        ConfigStorage.get('cordovaForceComputerUI', function (result) {
+            if (result.cordovaForceComputerUI) {
+                window.screen.orientation.lock('landscape');
+                $('body').css('zoom', self.uiZoom);
+            } else {
+                window.screen.orientation.lock('portrait');
+                $('body').css('zoom', 1);
+            }
+        });
+    },
+};
+
 const cordovaApp = {
+    uiZoom: 1,
     initialize: function() {
         this.bindEvents();
     },
@@ -8,19 +46,11 @@ const cordovaApp = {
         document.addEventListener('deviceready', this.onDeviceReady, false);
     },
     onDeviceReady: function() {
-        cordovaApp.receivedEvent('deviceready');
-        // Todo : remove alert
-        let alert = 'This version is currently in beta. Some features may not work properly.';
-        alert += 'Currently, the firmware flasher is disabled. If you find a bug, please report it at https://github.com/betaflight/betaflight-configurator/pull/1946';
-        navigator.notification.alert(alert, function() {
-            $('.open_firmware_flasher, .tab_firmware_flasher').hide();
-            navigator.splashscreen.hide();
-            cordovaChromeapi.init();
-            appReady();
-        }, 'Betaflight Configurator for Android', 'Ok');
-    },
-    receivedEvent: function(id) {
-        console.log(`Received Event: ${id}`);
+        $('.open_firmware_flasher, .tab_firmware_flasher').hide();
+        cordovaUI.init();
+        navigator.splashscreen.hide();
+        cordovaChromeapi.init();
+        appReady();
     },
 };
 

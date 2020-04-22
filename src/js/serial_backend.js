@@ -106,7 +106,6 @@ function initializeSerialBackend() {
     });
 
     // auto-connect
-    GUI.switchery();
     ConfigStorage.get('auto_connect', function (result) {
         if (result.auto_connect === 'undefined' || result.auto_connect) {
             // default or enabled by user

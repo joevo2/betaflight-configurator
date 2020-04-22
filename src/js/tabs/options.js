@@ -2,9 +2,7 @@
 
 TABS.options = {};
 TABS.options.initialize = function (callback) {
-    var self = this;
-
-    if (GUI.active_tab != 'options') {
+    if (GUI.active_tab !== 'options') {
         GUI.active_tab = 'options';
     }
 
@@ -83,6 +81,26 @@ TABS.options.initialize = function (callback) {
                 CliAutoComplete.setEnabled(checked);
             }).change();
 
+        if (GUI.Mode === 'Cordova') {
+            ConfigStorage.get('cordovaForceComputerUI', function (result) {
+                if (result.cordovaForceComputerUI) {
+                    $('div.cordovaForceComputerUI input').prop('checked', true);
+                }
+
+                $('div.cordovaForceComputerUI input').change(function () {
+                    const checked = $(this).is(':checked');
+
+                    ConfigStorage.set({'cordovaForceComputerUI': checked});
+
+                    if (typeof cordovaUI.set === 'function') {
+                        cordovaUI.set();
+                    }
+                });
+            });
+        } else {
+            $('div.cordovaForceComputerUI').hide();
+        }
+
         $('#darkThemeSelect')
             .val(DarkTheme.configEnabled)
             .change(function () {
@@ -97,5 +115,7 @@ TABS.options.initialize = function (callback) {
 };
 
 TABS.options.cleanup = function (callback) {
-    if (callback) callback();
+    if (callback) {
+        callback();
+    }
 };

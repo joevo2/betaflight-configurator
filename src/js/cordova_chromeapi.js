@@ -168,7 +168,7 @@ const chromeapiSerial = {
                 chromeCallbackWithError(self.logHeader+error, callback);
             });
         } else {
-            chromeCallbackWithError(self.logHeader+error, callback);
+            chromeCallbackWithError(`${self.logHeader} invalid vendor id / product id`, callback);
         }
     },
     disconnect: function(connectionId, callback) {

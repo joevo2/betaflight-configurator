@@ -92,6 +92,9 @@
     "analyticsOptOut": {
         "message": "Opt out of the anonymised collection of statistics data"
     },
+    "cordovaForceComputerUI": {
+        "message": "Use computers interface instead of phones interface"
+    },
     "language_changed": {
         "message": "Language change saved"
     },
@@ -289,6 +292,9 @@
     },
     "tabHelp": {
         "message": "Documentation & Support"
+    },
+    "tabOptions": {
+        "message": "Options"
     },
 
     "tabSetup": {

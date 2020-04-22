@@ -41,8 +41,6 @@ const CORDOVA_DIR = './cordova/';
 
 const LINUX_INSTALL_DIR = '/opt/betaflight';
 
-const WORKING_DIRECTORY = process.cwd();
-
 // Global variable to hold the change hash from when we get it, to when we use it.
 var gitChangeSetId;
 
@@ -56,6 +54,8 @@ var nwBuilderOptions = {
 };
 
 var nwArmVersion = '0.27.6';
+
+let cordovaDependencies = true;
 
 //-----------------
 //Pre tasks operations
@@ -122,9 +122,12 @@ function getInputPlatforms() {
         var arg = process.argv[i].match(regEx)[1];
         if (supportedPlatforms.indexOf(arg) > -1) {
             platforms.push(arg);
-        } else if (arg == 'nowinicon') {
-            console.log('ignoring winIco')
+        } else if (arg === 'nowinicon') {
+            console.log('ignoring winIco');
             delete nwBuilderOptions['winIco'];
+        } else if (arg === 'skipdep') {
+            console.log('ignoring cordova dependencies');
+            cordovaDependencies = false;
         } else {
             console.log('Unknown platform: ' + arg);
             process.exit();
@@ -800,7 +803,9 @@ function cordova_dist() {
         distTasks.push(cordova_packagejson);
         distTasks.push(cordova_configxml);
         distTasks.push(cordova_depedencies);
-        distTasks.push(cordova_platforms);
+        if (cordovaDependencies) {
+            distTasks.push(cordova_platforms);
+        }
     } else {
         distTasks.push(function cordova_dist_none(done) {
             done();
@@ -823,7 +828,12 @@ function cordova_apps() {
 
 
 function cordova_clean() {
-    return del(['./cordova/www/**', './cordova/resources/**', './cordova/plugins/**', './cordova/platforms/**'], { force: true });
+    const patterns = ['./cordova/www/**', './cordova/resources/**'];
+    if (cordovaDependencies) {
+        patterns.push('./cordova/plugins/**');
+        patterns.push('./cordova/platforms/**');
+    }
+    return del(patterns, { force: true });
 }
 function cordova_copy_www() {
     return gulp.src(`${DIST_DIR}**`, { base: DIST_DIR })

@@ -1,49 +1,78 @@
 'use strict';
 
-let UI_PHONES = {
+const UI_PHONES = {
+    background: '#background',
+    tabContainer: '.tab_container',
+    tabContentContainer: '#tab-content-container',
+    headerbar: '.headerbar',
     init: function() {
         const self = this;
-        $('#menu_btn').click(self.openSideMenu);
-        $('#background').click(self.closeSideMenu);
+        console.log(self);
+        $('#menu_btn').click(function() {
+            self.openSideMenu();
+        });
+        $('#background').click(function() {
+            self.closeSideMenu();
+        });
         $('#tabs a').click(function() {
             if ($('.tab_container').hasClass('reveal')) {
                 self.closeSideMenu();
             }
         });
-        $('#reveal_btn').click(self.expandHeader);
+        $('#reveal_btn').click(function() {
+            self.expandHeader();
+        });
+    },
+    initToolbar: function() {
+        $('.toolbar_expand_btn').click(this.expandToolbar);
     },
     openSideMenu: function() {
-        $('#background').fadeIn(300);
-        $('.tab_container').addClass('reveal');
+        $(this.background).fadeIn(300);
+        $(this.tabContainer).addClass('reveal');
     },
     closeSideMenu: function() {
-        $('#background').fadeOut(300);
-        $('.tab_container').removeClass('reveal');
+        $(this.background).fadeOut(300);
+        $(this.tabContainer).removeClass('reveal');
     },
     expandHeader: function() {
-        let expand, header_expanded, reveal;
+        const self = this;
+        let expand, headerExpanded, reveal;
         if (GUI.connected_to) {
             expand = 'expand2';
-            header_expanded = 'header_expanded2';
+            headerExpanded = 'header_expanded2';
             reveal = '.header-wrapper';
         } else {
             expand = 'expand';
-            header_expanded = 'header_expanded';
+            headerExpanded = 'headerExpanded';
             reveal = '#port-picker';
         }
-        if ($('.headerbar').hasClass(expand)) {
-            $('#tab-content-container').removeClass(header_expanded);
+        if ($(self.headerbar).hasClass(expand)) {
             $(reveal).removeClass('reveal');
-            $('.headerbar').removeClass(expand);
+            setTimeout(function() {
+                $(self.tabContentContainer).removeClass(headerExpanded);
+                $(self.headerbar).removeClass(expand);
+            }, 100);
         } else {
-            $('#tab-content-container').addClass(header_expanded);
-            $('.headerbar').addClass(expand);
-            $(reveal).addClass('reveal');
+            $(self.tabContentContainer).addClass(headerExpanded);
+            $(self.headerbar).addClass(expand);
+            setTimeout(function() {
+                $(reveal).addClass('reveal');
+            }, 100);
+        }
+    },
+    expandToolbar: function() {
+        const toolbar = $('.content_toolbar.xs-compressed');
+        if (toolbar.length > 0) {
+            if ($('.content_toolbar.xs-compressed').hasClass('expanded')) {
+                toolbar.removeClass('expanded');
+            } else {
+                toolbar.addClass('expanded');
+            }
         }
     },
     reset: function() {
-        $('#tab-content-container').removeClass('header_expanded2 header_expanded');
+        $(this.tabContentContainer).removeClass('header_expanded2 header_expanded');
         $('#port-picker, .header-wrapper').removeClass('reveal');
-        $('.headerbar').removeClass('expand2 expand');
+        $(this.headerbar).removeClass('expand2 expand');
     },
 };

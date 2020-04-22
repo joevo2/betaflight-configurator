@@ -41,7 +41,8 @@
       "cordova-plugin-file": {},
       "cordova-plugin-filechooser": {},
       "cordova-plugin-chrome-apps-usb": {},
-      "cordova-clipboard": {}
+      "cordova-clipboard": {},
+      "cordova-plugin-screen-orientation": {}
     }
   }
 }

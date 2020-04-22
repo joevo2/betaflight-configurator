@@ -35,8 +35,8 @@ body {
     font-size: 12px;
     color: #303030;
     background-color: #3d3f3e;
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
     overflow: hidden;
 }
 
@@ -94,7 +94,7 @@ a.disabled {
     font-weight: bold;
     font-size: 10px;
     line-height: 17px;
-    text-shadow: 0px 1px rgba(255, 255, 255, 0.25);
+    text-shadow: 0 1px rgba(255, 255, 255, 0.25);
     text-transform: uppercase;
     letter-spacing: 0.03em;
     display: block;
@@ -199,17 +199,17 @@ input[type="number"]::-webkit-inner-spin-button {
     background-position: left center;
     background-size: contain;
     position: relative;
+    margin-top: -25px;
 }
 
 .logo_text {
     position: absolute;
     left: 80px;
-    right: 0;
-    bottom: 0;
-    top: 50px;
+    top: 49px;
     color: #949494;
     opacity: 0.5;
     font-size: 10px;
+    min-width: 210px;
 }
 
 @media all and (min-width: 1125px) {
@@ -300,7 +300,7 @@ input[type="number"]::-webkit-inner-spin-button {
     height: 50px;
     width: 50px;
     border-radius: 100px;
-    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.35);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
     float: left;
     transition: none;
 }
@@ -349,7 +349,7 @@ input[type="number"]::-webkit-inner-spin-button {
     color: #fff;
     font-size: 12px;
     font-weight: normal;
-    text-shadow: 0px 1px rgba(0, 0, 0, 0.25);
+    text-shadow: 0 1px rgba(0, 0, 0, 0.25);
     padding: 0 10px;
 }
 
@@ -363,7 +363,7 @@ input[type="number"]::-webkit-inner-spin-button {
     height: 67px;
     border-radius: 5px;
     border: 1px solid #272727;
-    box-shadow: 0px 2px 0px rgba(92, 92, 92, 0.5);
+    box-shadow: 0 2px 0 rgba(92, 92, 92, 0.5);
     background-color: #434343;
     background-image: -webkit-linear-gradient(top, transparent, rgba(0, 0, 0, 0.55));
 }
@@ -388,7 +388,7 @@ input[type="number"]::-webkit-inner-spin-button {
     background-image: -webkit-linear-gradient(top, transparent, rgba(0, 0, 0, 0.45));
     padding-left: 5px;
     padding-right: 5px;
-    text-shadow: 0px 1px rgba(0, 0, 0, 1.0);
+    text-shadow: 0 1px rgba(0, 0, 0, 1.0);
 }
 
 .gyroicon, .accicon, .magicon, .gpsicon, .baroicon, .sonaricon {
@@ -466,13 +466,13 @@ input[type="number"]::-webkit-inner-spin-button {
 }
 
 #sensor-status li:last-child {
-    border-right: 0px solid #c0c0c0;
+    border-right: 0 solid #c0c0c0;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
 }
 
 #sensor-status li:first-child {
-    border-left: 0px solid #c0c0c0;
+    border-left: 0 solid #c0c0c0;
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
 }
@@ -493,12 +493,12 @@ input[type="number"]::-webkit-inner-spin-button {
     height: 33px;
     border-radius: 5px;
     border: 1px solid #272727;
-    box-shadow: 0px 1px 0px rgba(92, 92, 92, 0.5);
+    box-shadow: 0 1px 0 rgba(92, 92, 92, 0.5);
     background-color: #434343;
     background-image: -webkit-linear-gradient(top, transparent, rgba(0, 0, 0, 0.55));
     padding-top:5px;
     display:none;
-    text-shadow: 0px 1px rgba(0, 0, 0, 1.0);
+    text-shadow: 0 1px rgba(0, 0, 0, 1.0);
 
 }
 
@@ -543,7 +543,7 @@ input[type="number"]::-webkit-inner-spin-button {
 .dataflash-contents_global li div {
     position: absolute;
     top: -18px;
-    margin-top: 0px;
+    margin-top: 0;
     left: 0;
     right: 0;
     width:120px;
@@ -564,7 +564,7 @@ input[type="number"]::-webkit-inner-spin-button {
     display:none;
     color: #868686;
     text-align: center;
-    text-shadow: 0px 1px rgba(0, 0, 0, 1.0);
+    text-shadow: 0 1px rgba(0, 0, 0, 1.0);
     margin-top:2px;
 }
 
@@ -573,7 +573,7 @@ input[type="number"]::-webkit-inner-spin-button {
     margin-top: 27px;
     width:125px;
     float: right;
-    margin-right: 0px;
+    margin-right: 0;
     line-height: 12px;
 }
 
@@ -589,10 +589,10 @@ input[type="number"]::-webkit-inner-spin-button {
     height: 67px;
     border-radius: 5px;
     border: 1px solid #272727;
-    box-shadow: 0px 1px 0px rgba(92, 92, 92, 0.5);
+    box-shadow: 0 1px 0 rgba(92, 92, 92, 0.5);
     background-color: #434343;
     background-image: -webkit-linear-gradient(top, transparent, rgba(0, 0, 0, 0.55));
-    text-shadow: 0px 1px rgba(0, 0, 0, 1.0);
+    text-shadow: 0 1px rgba(0, 0, 0, 1.0);
 }
 
 @media all and (min-width: 1125px) {
@@ -614,7 +614,7 @@ input[type="number"]::-webkit-inner-spin-button {
     display: inline;
     position: relative;
     top: -2px;
-    margin-top: 0px;
+    margin-top: 0;
     left: 0;
     right: 0;
     width: 40px;
@@ -650,7 +650,7 @@ input[type="number"]::-webkit-inner-spin-button {
 
 @keyframes error-blinker {
     0% {
-        background-color: none;
+        background-color: transparent;
     }
     50% {
         background-color: var(--error);
@@ -738,7 +738,9 @@ input[type="number"]::-webkit-inner-spin-button {
         height: 24px;
         width: 150px;
         background-image: url(../images/light-wide-2-compact.svg);
+        background-position: left center;
         order: 2;
+        margin-top: 0;
     }
 
     #header_btns {
@@ -829,8 +831,8 @@ input[type="number"]::-webkit-inner-spin-button {
     top: 113px;
     height: 27px;
     width: 27px;
-    background-image: url(../images/icons/scroll.svg);
     background-repeat: no-repeat;
+    background-image: url(../images/icons/scroll.svg);
     opacity: 0.0;
     transition: all ease 0.3s;
 }
@@ -844,11 +846,9 @@ input[type="number"]::-webkit-inner-spin-button {
 }
 
 #log .wrapper {
-    padding: 5px;
-    padding-left: 10px;
-    padding-bottom: 4px;
+    padding: 5px 5px 4px 10px;
     position: relative;
-    bottom: 0px;
+    bottom: 0;
 }
 
 #log a {
@@ -879,6 +879,9 @@ input[type="number"]::-webkit-inner-spin-button {
 
 /** Log (phones) **/
 @media all and (max-width: 575px) {
+    #log.active {
+        box-shadow: none;
+    }
     .logswitch {
         background-color: #242424;
     }
@@ -980,11 +983,11 @@ input[type="number"]::-webkit-inner-spin-button {
 }
 
 #tabs li:first-child {
-    border-top: 0px;
+    border-top: 0;
 }
 
 #tabs li:last-child {
-    border-bottom: 0px;
+    border-bottom: 0;
 }
 
 #tabs li a {
@@ -996,7 +999,7 @@ input[type="number"]::-webkit-inner-spin-button {
     color: #999999;
     height: 23px;
     display: block;
-    text-shadow: 0px 1px rgba(0, 0, 0, 0.45);
+    text-shadow: 0 1px rgba(0, 0, 0, 0.45);
     transition: none;
     border-top: solid 1px rgba(255, 255, 255, 0.05);
     /* following is just for a graceful degradation */
@@ -1021,7 +1024,7 @@ input[type="number"]::-webkit-inner-spin-button {
     background-color: var(--accent);
     color: #000;
     transition: none;
-    text-shadow: 0px 1px rgba(255, 255, 255, 0.45);
+    text-shadow: 0 1px rgba(255, 255, 255, 0.45);
 
 }
 
@@ -1426,7 +1429,7 @@ li.active .ic_mission {
 /** Status bar **/
 #status-bar {
     position: fixed;
-    bottom: 0px;
+    bottom: 0;
     width: calc(100% - 20px);
     height: 20px;
     line-height: 20px;
@@ -1490,8 +1493,8 @@ dialog {
 
 dialog .dialog_toolbar .btn a {
     /*  common styles for content toolbar buttons */
-    margin-top: 0px;
-    margin-bottom: 0px;
+    margin-top: 0;
+    margin-bottom: 0;
     margin-right: 20px;
     background-color: var(--accent);
     border-radius: 3px;
@@ -1500,13 +1503,11 @@ dialog .dialog_toolbar .btn a {
     float: left;
     font-weight: bold;
     font-size: 12px;
-    text-shadow: 0px 1px rgba(255, 255, 255, 0.25);
+    text-shadow: 0 1px rgba(255, 255, 255, 0.25);
     display: block;
     cursor: pointer;
     transition: all ease 0.2s;
-    padding: 0px;
-    padding-left: 9px;
-    padding-right: 9px;
+    padding: 0 9px;
     line-height: 28px;
 }
 
@@ -1518,7 +1519,7 @@ dialog .dialog_toolbar .btn a:hover {
 dialog .dialog_toolbar .btn a:active {
     background-color: var(--accent);
     transition: all ease 0.0s;
-    box-shadow: inset 0px 1px 5px rgba(0, 0, 0, 0.35);
+    box-shadow: inset 0 1px 5px rgba(0, 0, 0, 0.35);
 }
 
 dialog .dialog_toolbar .btn a.disabled {
@@ -1547,7 +1548,7 @@ dialog .dialog_toolbar .btn a.disabled {
     background-color: #fff7cd;
     border: 1px solid #ffe55f;
     margin-bottom: 10px;
-    margin-top: 0px;
+    margin-top: 0;
     border-radius: 3px;
     font-size: 11px;
     font-weight: normal;
@@ -1576,8 +1577,8 @@ dialog .dialog_toolbar .btn a.disabled {
 
 .content_toolbar .btn a {
     /*  common styles for content toolbar buttons */
-    margin-top: 0px;
-    margin-bottom: 0px;
+    margin-top: 0;
+    margin-bottom: 0;
     margin-right: 20px;
     background-color: var(--accent);
     border-radius: 3px;
@@ -1586,13 +1587,11 @@ dialog .dialog_toolbar .btn a.disabled {
     float: right;
     font-weight: bold;
     font-size: 12px;
-    text-shadow: 0px 1px rgba(255, 255, 255, 0.25);
+    text-shadow: 0 1px rgba(255, 255, 255, 0.25);
     display: block;
     cursor: pointer;
     transition: all ease 0.2s;
-    padding: 0px;
-    padding-left: 9px;
-    padding-right: 9px;
+    padding: 0 9px;
     line-height: 28px;
 }
 
@@ -1604,7 +1603,7 @@ dialog .dialog_toolbar .btn a.disabled {
 .content_toolbar .btn a:active {
     background-color: var(--accent);
     transition: all ease 0.0s;
-    box-shadow: inset 0px 1px 5px rgba(0, 0, 0, 0.35);
+    box-shadow: inset 0 1px 5px rgba(0, 0, 0, 0.35);
 }
 
 .content_toolbar .btn a.disabled {
@@ -1636,6 +1635,7 @@ dialog .dialog_toolbar .btn a.disabled {
 
 .toolbar_fixed_bottom .content_toolbar {
     display: flex;
+    flex-wrap: wrap;
     position: absolute;
     bottom: 0;
     left: 0;
@@ -1644,6 +1644,50 @@ dialog .dialog_toolbar .btn a.disabled {
 
 .toolbar_fixed_bottom .content_toolbar div:first-child {
     margin-left: auto;
+}
+
+.toolbar_fixed_bottom .content_toolbar.xs-compressed {
+    flex-direction: row-reverse;
+}
+
+.toolbar_fixed_bottom .content_toolbar.xs-compressed div:first-child {
+    margin-left: 0;
+}
+
+.toolbar_fixed_bottom .content_toolbar.xs-compressed div:last-child {
+    margin-left: auto;
+}
+
+.toolbar_expand_btn {
+    display: none;
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    width: 20px;
+    height: 20px;
+    font-size: 20px;
+    line-height: 20px;
+    text-align: center;
+    z-index: 2000;
+}
+
+@media all and (max-width: 575px) {
+    .toolbar_fixed_bottom .content_toolbar.xs-compressed {
+        padding-left: 60px;
+        box-sizing: border-box;
+        height: 50px;
+    }
+    .toolbar_fixed_bottom .content_toolbar.xs-compressed.expanded {
+        padding-left: 15px;
+        padding-bottom: 0;
+        height: auto;
+    }
+    .toolbar_fixed_bottom .content_toolbar.xs-compressed div {
+        margin-bottom: 10px;
+    }
+    .toolbar_expand_btn {
+        display: block;
+    }
 }
 
 /** Hack to change the "display: none" by a "visibility:hidden", to apply
@@ -1656,7 +1700,7 @@ dialog .dialog_toolbar .btn a.disabled {
 /* Colums  START> */
 .cf_column {
     min-height: 20px;
-    margin-bottom: 0px;
+    margin-bottom: 0;
 }
 
 .full {
@@ -1774,11 +1818,11 @@ dialog .dialog_toolbar .btn a.disabled {
 .gui_box_titlebar {
     background-color: var(--quietHeader);
     color: var(--quietText);
-    border-radius: 3px 3px 0px 0px;
+    border-radius: 3px 3px 0 0;
     font-size: 13px;
     width: 100%;
     height: 27px;
-    padding-bottom: 0px;
+    padding-bottom: 0;
     float: left;
     margin-bottom: 7px;
     font-weight: 600;
@@ -1786,11 +1830,11 @@ dialog .dialog_toolbar .btn a.disabled {
 
 .gui_box_bottombar {
     background-color: #e4e4e4;
-    border-radius: 0px 0px 3px 3px;
+    border-radius: 0 0 3px 3px;
     font-size: 13px;
     width: 100%;
     height: 27px;
-    padding-top: 0px;
+    padding-top: 0;
     float: left;
     font-weight: 600;
 }
@@ -1804,7 +1848,7 @@ dialog .dialog_toolbar .btn a.disabled {
     padding-left: 10px;
     padding-right: 10px;
     padding-top: 4px;
-    margin-bottom: 0px;
+    margin-bottom: 0;
     float: left;
 }
 
@@ -1816,13 +1860,13 @@ dialog .dialog_toolbar .btn a.disabled {
     width: calc(100% + 40px);
     margin-left: -20px;
     box-shadow: rgba(0, 0, 0, 0.00) 0 -3px 8px;
-    bottom: 0px;
-    margin-bottom: 0px;
+    bottom: 0;
+    margin-bottom: 0;
 }
 
 .fixed_band .save_btn a {
     margin-top: 9px;
-    margin-bottom: 0px;
+    margin-bottom: 0;
     margin-right: 20px;
     background-color: var(--accent);
     border-radius: 3px;
@@ -1831,13 +1875,11 @@ dialog .dialog_toolbar .btn a.disabled {
     float: right;
     font-weight: bold;
     font-size: 12px;
-    text-shadow: 0px 1px rgba(0, 0, 0, 0.25);
+    text-shadow: 0 1px rgba(0, 0, 0, 0.25);
     display: block;
     cursor: pointer;
     transition: all ease 0.2s;
-    padding: 0px;
-    padding-left: 9px;
-    padding-right: 9px;
+    padding: 0 9px;
     line-height: 28px;
 }
 
@@ -1851,12 +1893,12 @@ dialog .dialog_toolbar .btn a.disabled {
     width: 100%;
     position: relative;
     margin-bottom: 10px;
-    margin-top: 0px;
+    margin-top: 0;
     float: left;
 }
 
 .default_btn a {
-    padding: 5px 0px 5px 0px;
+    padding: 5px 0 5px 0;
     text-align: center;
     background-color: var(--accent);
     border-radius: 4px;
@@ -1880,7 +1922,7 @@ dialog .dialog_toolbar .btn a.disabled {
 .default_btn a:hover {
     background-color: #ffcc3f;
     color: #000;
-    text-shadow: 0px 1px rgba(255, 255, 255, 0.25);
+    text-shadow: 0 1px rgba(255, 255, 255, 0.25);
     transition: all ease 0.2s;
     text-decoration:none;
 
@@ -1889,7 +1931,7 @@ dialog .dialog_toolbar .btn a.disabled {
 .default_btn a:active {
     background-color: #ffcc3f;
     transition: all ease 0.0s;
-    box-shadow: inset 0px 1px 5px rgba(0, 0, 0, 0.35);
+    box-shadow: inset 0 1px 5px rgba(0, 0, 0, 0.35);
 }
 
 .margin-top5 {
@@ -1906,13 +1948,11 @@ dialog .dialog_toolbar .btn a.disabled {
     color: #000;
     font-weight: bold;
     font-size: 12px;
-    text-shadow: 0px 1px rgba(255, 255, 255, 0.25);
+    text-shadow: 0 1px rgba(255, 255, 255, 0.25);
     display: inline-block;
     cursor: pointer;
     transition: all ease 0.2s;
-    padding: 0px;
-    padding-left: 9px;
-    padding-right: 9px;
+    padding: 0 9px;
     line-height: 28px;
 }
 
@@ -1920,7 +1960,7 @@ dialog .dialog_toolbar .btn a.disabled {
     width: auto;
     position: relative;
     margin-bottom: 7px;
-    margin-top: 0px;
+    margin-top: 0;
     margin-right: 5px;
     float: left;
 }
@@ -1928,7 +1968,7 @@ dialog .dialog_toolbar .btn a.disabled {
 .small a {
     padding: 3px 4px 4px 4px;
     text-align: center;
-    text-shadow: 0px 1px rgba(0, 0, 0, 0.25);
+    text-shadow: 0 1px rgba(0, 0, 0, 0.25);
     background-color: #acacac;
     border-radius: 3px;
     border: 1px solid #949494;
@@ -1943,7 +1983,7 @@ dialog .dialog_toolbar .btn a.disabled {
 .small a:hover {
     background-color: var(--accent);
     color: #000;
-    text-shadow: 0px 1px rgba(255, 255, 255, 0.25);
+    text-shadow: 0 1px rgba(255, 255, 255, 0.25);
     border: 1px solid var(--accent);
     transition: all ease 0.2s;
 }
@@ -1951,12 +1991,12 @@ dialog .dialog_toolbar .btn a.disabled {
 .small a:active {
     background-color: #878787;
     transition: all ease 0.0s;
-    box-shadow: inset 0px 1px 5px rgba(0, 0, 0, 0.35);
+    box-shadow: inset 0 1px 5px rgba(0, 0, 0, 0.35);
 }
 
 .green a {
     background-color: var(--accent);
-    text-shadow: 0px 1px rgba(255, 255, 255, 0.25);
+    text-shadow: 0 1px rgba(255, 255, 255, 0.25);
     color: #000;
     border: 1px solid #dba718;
     transition: all ease 0.2s;
@@ -1965,7 +2005,7 @@ dialog .dialog_toolbar .btn a.disabled {
 .green a:hover {
     background-color: #ffcc3f;
     border: 1px solid #dba718;
-    text-shadow: 0px 1px rgba(255, 255, 255, 0.25);
+    text-shadow: 0 1px rgba(255, 255, 255, 0.25);
     color: #000;
     transition: all ease 0.2s;
 }
@@ -1980,14 +2020,13 @@ dialog .dialog_toolbar .btn a.disabled {
 }
 
 .cf_table td {
-    border: 0px;
+    border: 0;
     padding-top: 2px;
     padding-bottom: 5px;
 }
 
 .cf_table tr:not(:last-child) td {
-    border-bottom: solid 1px var(--subtleAccent);
-    border-style: dotted;
+    border-bottom: dotted 1px var(--subtleAccent);
 }
 
 .third {
@@ -2045,9 +2084,7 @@ dialog .dialog_toolbar .btn a.disabled {
 /* GPS Fix styling*/
 .fixtrue {
     background-color: #56ac1d;
-    padding: 2px;
-    padding-left: 5px;
-    padding-right: 5px;
+    padding: 2px 5px;
     border-radius: 3px;
     color: #fff;
     font-size: 10px;
@@ -2055,9 +2092,7 @@ dialog .dialog_toolbar .btn a.disabled {
 
 .fixfalse {
     background-color: #e60000;
-    padding: 2px;
-    padding-left: 5px;
-    padding-right: 5px;
+    padding: 2px 5px;
     border-radius: 3px;
     color: #fff;
     font-size: 10px;
@@ -2135,7 +2170,7 @@ button.active {
 .gui_box_titlebar {
     font-size: 12px;
     height: 24px;
-    padding-bottom: 0px;
+    padding-bottom: 0;
     margin-bottom: 5px;
     float: left;
 }
@@ -2144,7 +2179,7 @@ button.active {
     padding-left: 10px;
     padding-right: 10px;
     padding-top: 3px;
-    margin-bottom: 0px;
+    margin-bottom: 0;
     float: left;
 }
 
@@ -2162,12 +2197,12 @@ input {
     }
 
 .gps_false {
-    padding: 0px 3px 0px 3px;
+    padding: 0 3px 0 3px;
     font-size: 10px;
 }
 
 .gps_true {
-    padding: 0px 3px 0px 3px;
+    padding: 0 3px 0 3px;
     font-size: 10px;
 }
 
@@ -2240,8 +2275,7 @@ input {
 }
 
 .dialogReportProblems-listItem {
-    list-style: initial;
-    list-style-type: circle;
+    list-style: circle;
     margin-left: 20px;
     margin-bottom: 5px;
 }
@@ -2341,11 +2375,11 @@ input {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    box-sizing: border-box;
 }
 .grid-col {
     margin-left: 7px;
     margin-right: 7px;
-    margin-bottom: 10px;
 }
 .grid-col.col1 {
     width: calc(8.33% - 14px);
@@ -2424,42 +2458,6 @@ input {
 }
 .grid-col.col12:first-child, .grid-col.col12:last-child {
     width: calc(100% - 7px);
-}
-.grid-col.col1:first-child:last-child {
-    width: 8.33%;
-}
-.grid-col.col2:first-child:last-child {
-    width: 16.67%;
-}
-.grid-col.col3:first-child:last-child {
-    width: 25%;
-}
-.grid-col.col4:first-child:last-child {
-    width: 33.33%;
-}
-.grid-col.col5:first-child:last-child {
-    width: 41.67%;
-}
-.grid-col.col6:first-child:last-child {
-    width: 50%;
-}
-.grid-col.col7:first-child:last-child {
-    width: 58.33%;
-}
-.grid-col.col8:first-child:last-child {
-    width: 66.67%;
-}
-.grid-col.col9:first-child:last-child {
-    width: 75%;
-}
-.grid-col.col10:first-child:last-child {
-    width: 83.33%;
-}
-.grid-col.col11:first-child:last-child {
-    width: 91.67%;
-}
-.grid-col.col12:first-child:last-child {
-    width: 100%;
 }
 @media all and (max-width: 575px) {
     .grid-col.col1, .grid-col.col2, .grid-col.col3, .grid-col.col4, .grid-col.col5, .grid-col.col6, .grid-col.col7, .grid-col.col8, .grid-col.col9, .grid-col.col10, .grid-col.col11, .grid-col.col12 {
