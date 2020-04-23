@@ -81,7 +81,7 @@ TABS.options.initialize = function (callback) {
                 CliAutoComplete.setEnabled(checked);
             }).change();
 
-        if (GUI.Mode === 'Cordova') {
+        if (GUI.Mode === 'Cordova' && cordovaUI.canChangeUI) {
             ConfigStorage.get('cordovaForceComputerUI', function (result) {
                 if (result.cordovaForceComputerUI) {
                     $('div.cordovaForceComputerUI input').prop('checked', true);

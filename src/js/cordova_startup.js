@@ -2,19 +2,30 @@
 
 const cordovaUI = {
     uiZoom: 1,
+    canChangeUI: true,
     init: async function() {
         const self = this;
-        let length = $(window).width();
-        if (window.innerHeight > length) {
-            length = $(window).height();
+        const screenWidth = $(window).width();
+        const screenHeight = $(window).height();
+        let length;
+        let orientation;
+        if (screenWidth > screenHeight) {
+            length = screenWidth;
+            orientation = 'landscape';
+        } else {
+            length = screenHeight;
+            orientation = 'portrait';
         }
         if (length < 1024) {
-            console.log(length);
             self.uiZoom = length/1024;
+        }
+        if (screenWidth > 575 && screenHeight > 575) {
+            self.canChangeUI = false;
         }
         ConfigStorage.get('cordovaForceComputerUI', function (result) {
             if (result.cordovaForceComputerUI === undefined) {
-                if (length < 1024) {
+                if ((orientation === 'landscape' && screenHeight <= 575)
+                    || (orientation === 'portrait' && screenWidth <= 575)) {
                     ConfigStorage.set({'cordovaForceComputerUI': false});
                 } else {
                     ConfigStorage.set({'cordovaForceComputerUI': true});
@@ -38,7 +49,6 @@ const cordovaUI = {
 };
 
 const cordovaApp = {
-    uiZoom: 1,
     initialize: function() {
         this.bindEvents();
     },

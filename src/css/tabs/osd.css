@@ -541,13 +541,13 @@ button {
     #fontmanagercontent {
         max-width: 100%;
     }
-    .tab-osd .content_wrapper.font-preview {
+    .content_wrapper.font-preview {
         padding: 15px 0;
     }
     #fontmanagercontent .grid-row {
         margin-bottom: 15px;
     }
-    .tab-osd .fontpresets_wrapper {
+    .fontpresets_wrapper {
         display: block;
         position: relative;
         right: 0;

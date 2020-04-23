@@ -68,7 +68,7 @@ function initializeSerialBackend() {
 
                     // lock port select & baud while we are connecting / connected
                     $('div#port-picker #port, div#port-picker #baud, div#port-picker #delay').prop('disabled', true);
-                    $('div.connect_controls a.connect_state').text(i18n.getMessage('connecting'));
+                    $('div.connect_controls div.connect_state').text(i18n.getMessage('connecting'));
 
                     serial.connect(portName, {bitrate: selected_baud}, onOpen);
 
@@ -185,7 +185,7 @@ function finishClose(finishedCallback) {
 
     // reset connect / disconnect button
     $('div.connect_controls a.connect').removeClass('active');
-    $('div.connect_controls a.connect_state').text(i18n.getMessage('connect'));
+    $('div.connect_controls div.connect_state').text(i18n.getMessage('connect'));
 
     // reset active sensor indicators
     sensor_status(0);
@@ -308,7 +308,7 @@ function onOpen(openInfo) {
 }
 
 function abortConnect() {
-    $('div#connectbutton a.connect_state').text(i18n.getMessage('connect'));
+    $('div#connectbutton div.connect_state').text(i18n.getMessage('connect'));
     $('div#connectbutton a.connect').removeClass('active');
 
     // unlock port select & baud
@@ -471,7 +471,7 @@ function onConnect() {
         $('div#flashbutton a.flash').removeClass('active');
     }
     GUI.timeout_remove('connecting'); // kill connecting timer
-    $('div#connectbutton a.connect_state').text(i18n.getMessage('disconnect')).addClass('active');
+    $('div#connectbutton div.connect_state').text(i18n.getMessage('disconnect')).addClass('active');
     $('div#connectbutton a.connect').addClass('active');
 
     $('#tabs ul.mode-disconnected').hide();

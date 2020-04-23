@@ -7,7 +7,6 @@ const UI_PHONES = {
     headerbar: '.headerbar',
     init: function() {
         const self = this;
-        console.log(self);
         $('#menu_btn').click(function() {
             self.openSideMenu();
         });

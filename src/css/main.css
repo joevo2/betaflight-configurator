@@ -1531,6 +1531,17 @@ dialog .dialog_toolbar .btn a.disabled {
     text-shadow: none;
     opacity: 0.5;
 }
+
+@media all and (max-width: 575px) {
+    dialog {
+        width: calc(100% - 2em);
+        height: calc(100% - 2em);
+        top: 56px;
+        border-radius: unset;
+        border: none;
+        overflow: auto;
+    }
+}
 /* Border of the Tab */
 
 /* Tab Title */
@@ -1560,7 +1571,7 @@ dialog .dialog_toolbar .btn a.disabled {
 }
 
 .content_wrapper {
-    padding: 20px;
+    padding: 20px 20px 20px 19px;
     position: relative;
 }
 
@@ -2140,7 +2151,7 @@ button.active {
 @media only screen and (max-width: 1055px) , only screen and (max-device-width: 1055px) {
 
 .content_wrapper {
-    padding: 15px;
+    padding: 15px 15px 15px 14px;
 }
 
 .tab_title {
