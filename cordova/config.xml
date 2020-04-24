@@ -3,7 +3,7 @@
     <name>Betaflight Configurator</name>
     <description>Crossplatform configuration tool for Betaflight flight control system.</description>
     <author href="https://betaflight.com">The Betaflight open source project.</author>
-    <content src="main.html"/>
+    <content src="main_cordova.html"/>
     <access origin="*"/>
     <allow-intent href="http://*/*"/>
     <allow-intent href="https://*/*"/>

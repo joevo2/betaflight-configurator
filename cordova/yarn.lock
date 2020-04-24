@@ -610,6 +610,14 @@ cordova-lib@^9.0.0:
     shebang-command "^1.2.0"
     underscore "^1.9.1"
 
+"cordova-open-native-settings@git+https://github.com/MaximeAmadasi/cordova-open-native-settings.git":
+  version "1.5.2"
+  resolved "git+https://github.com/MaximeAmadasi/cordova-open-native-settings.git#b649e8a5724718391934b1cd02b71cb90da012a8"
+
+"cordova-plugin-appavailability@git+https://github.com/MaximeAmadasi/AppAvailability.git":
+  version "0.4.2"
+  resolved "git+https://github.com/MaximeAmadasi/AppAvailability.git#a4d961cf5cdaf02976d759a0f9fe0becaeda9018"
+
 cordova-plugin-chrome-apps-common@^1.0.7:
   version "1.0.7"
   resolved "https://registry.yarnpkg.com/cordova-plugin-chrome-apps-common/-/cordova-plugin-chrome-apps-common-1.0.7.tgz#300319b59c79dc552293f83a2332cf283b10908a"
@@ -643,6 +651,10 @@ cordova-plugin-filechooser@^1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/cordova-plugin-filechooser/-/cordova-plugin-filechooser-1.2.0.tgz#3a3a3d9c5bef733076f1f6b59e465f60a0d96577"
   integrity sha512-ycL9ML3wlRQ8wfK7vCG8gobv1f3VIdO52m0LA9mPSzLblbu0AXJs89yCRxZB87+08/V96qBxrmkxMsMmVYu5wA==
+
+"cordova-plugin-market@git+https://github.com/xmartlabs/cordova-plugin-market.git":
+  version "1.2.0"
+  resolved "git+https://github.com/xmartlabs/cordova-plugin-market.git#44b058abf668c0f810389d96598579ef729853b4"
 
 cordova-plugin-permission@^0.1.0:
   version "0.1.0"

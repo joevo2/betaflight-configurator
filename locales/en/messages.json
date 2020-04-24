@@ -5722,5 +5722,47 @@
     },
     "dialogFileAlreadyExistsDescription": {
         "message": "Overwrite ?"
+    },
+    "cordovaCheckingWebview": {
+        "message": "Checking webview applications ..."
+    },
+    "cordovaIncompatibleWebview": {
+        "message": "Incompatible webview"
+    },
+    "cordovaWebviewTroubleshootingMsg": {
+        "message": "You must update your device's webview in order to use the configurator."
+    },
+    "cordovaWebviewTroubleshootingMsg2": {
+        "message": "The tool below is intended to help you to install a new webview or to update an already installed webview."
+    },
+    "cordovaAvailableWebviews": {
+        "message": "Available webview applications on your device"
+    },
+    "cordovaWebviewInstall": {
+        "message": "Installing the <b>{{app}}</b> app can resolve this compatibility issue."
+    },
+    "cordovaWebviewInstallBtn": {
+        "message": "Install from the Google Play Store"
+    },
+    "cordovaWebviewUninstall": {
+        "message": "Uninstalling the <b>{{app}}</b> app can resolve this compatibility issue. If you are not able to uninstall it, try to disable it from the settings app."
+    },
+    "cordovaWebviewUninstallBtn1": {
+        "message": "Uninstall from the Google Play Store"
+    },
+    "cordovaWebviewUninstallBtn2": {
+        "message": "Uninstall / disable from the settings"
+    },
+    "cordovaWebviewUpdate": {
+        "message": "Updating the <b>{{app}}</b> app can resolve this compatibility issue."
+    },
+    "cordovaWebviewUpdateBtn": {
+        "message": "Update from the Google Play Store"
+    },
+    "cordovaWebviewIncompatible": {
+        "message": "Your device seems to be not compatible. Try to search other ways to update your webview"
+    },
+    "cordovaNoWebview": {
+        "message": "No webview application installed / enabled"
     }
 }
