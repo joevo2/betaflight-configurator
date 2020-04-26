@@ -297,6 +297,9 @@
     "tabSetupOSD": {
         "message": "OSD Setup"
     },
+    "tabWizards": {
+        "message": "Wizards"
+    },
     "tabConfiguration": {
         "message": "Configuration"
     },
