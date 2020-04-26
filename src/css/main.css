@@ -2249,3 +2249,12 @@ input {
 .noUi-connect {
     box-shadow: none;
 }
+
+
+/** Responsive design **/
+@media all and (max-width: 727px) {
+    /** Phones **/
+    html {
+        zoom: 60%;
+    }
+}

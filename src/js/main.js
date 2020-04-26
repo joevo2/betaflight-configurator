@@ -4,6 +4,12 @@ window.googleAnalytics = analytics;
 window.analytics = null;
 
 $(document).ready(function () {
+    if (typeof cordovaApp === 'undefined') {
+        appReady();
+    }
+});
+
+function appReady() {
     $.getJSON('version.json', function(data) {
         CONFIGURATOR.version = data.version;
         CONFIGURATOR.gitChangesetId = data.gitChangesetId;
@@ -29,7 +35,7 @@ $(document).ready(function () {
             initializeSerialBackend();
         });
     });
-});
+}
 
 function checkSetupAnalytics(callback) {
     if (!analytics) {

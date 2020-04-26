@@ -5704,5 +5704,17 @@
     "gpsSbasNone": {
         "message": "None",
         "description": "One of the options selectable for the GPS SBAS system"
+    },
+    "dialogFileNameTitle": {
+        "message": "File name"
+    },
+    "dialogFileNameDescription": {
+        "message": "The file will be saved in the '{{folder}}' folder in your internal storage."
+    },
+    "dialogFileAlreadyExistsTitle": {
+        "message": "This file already exists !"
+    },
+    "dialogFileAlreadyExistsDescription": {
+        "message": "Overwrite ?"
     }
 }

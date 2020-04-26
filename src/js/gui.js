@@ -48,30 +48,44 @@ var GUI_control = function () {
     this.allowedTabs = this.defaultAllowedTabsWhenDisconnected;
 
     // check which operating system is user running
-    if (navigator.appVersion.indexOf("Win") != -1)          this.operating_system = "Windows";
-    else if (navigator.appVersion.indexOf("Mac") != -1)     this.operating_system = "MacOS";
-    else if (navigator.appVersion.indexOf("CrOS") != -1)    this.operating_system = "ChromeOS";
-    else if (navigator.appVersion.indexOf("Linux") != -1)   this.operating_system = "Linux";
-    else if (navigator.appVersion.indexOf("X11") != -1)     this.operating_system = "UNIX";
-    else this.operating_system = "Unknown";
+    if (navigator.appVersion.indexOf("Win") !== -1) {
+        this.operating_system = "Windows";
+    } else if (navigator.appVersion.indexOf("Mac") !== -1) {
+        this.operating_system = "MacOS";
+    } else if (navigator.appVersion.indexOf("CrOS") !== -1) {
+        this.operating_system = "ChromeOS";
+    } else if (navigator.appVersion.indexOf("Android") !== -1) {
+        this.operating_system = "Android";
+    } else if (navigator.appVersion.indexOf("Linux") !== -1) {
+        this.operating_system = "Linux";
+    } else if (navigator.appVersion.indexOf("X11") !== -1) {
+        this.operating_system = "UNIX";
+    } else {
+        this.operating_system = "Unknown";
+    }
 
     // Check the method of execution
     this.nwGui = null;
     try {
-      this.nwGui = require('nw.gui');
-      this.Mode = GUI_Modes.NWJS;
+        this.nwGui = require('nw.gui');
+        this.Mode = GUI_Modes.NWJS;
     } catch (ex) {
-      if (window.chrome && chrome.storage && chrome.storage.local) {
-        this.Mode = GUI_Modes.ChromeApp;
-      } else {
-        this.Mode = GUI_Modes.Other;
-      }
+        if (typeof cordovaApp !== 'undefined') {
+            this.Mode = GUI_Modes.Cordova;
+        } else {
+            if (window.chrome && chrome.storage && chrome.storage.local) {
+                this.Mode = GUI_Modes.ChromeApp;
+            } else {
+                this.Mode = GUI_Modes.Other;
+            }
+        }
     }
 };
 
 const GUI_Modes = {
   NWJS: "NW.js",
   ChromeApp: "Chrome",
+  Cordova: "Cordova",
   Other: "Other"
 };
 
