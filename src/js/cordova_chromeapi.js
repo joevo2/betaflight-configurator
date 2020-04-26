@@ -273,6 +273,7 @@ const chromeapiSerial = {
 
 const chromeapiFilesystem = {
     logHeader: 'FILESYSTEM (adapted from Cordova): ',
+    savedEntries: [],
     getFileExtension: function(fileName) {
         const re = /(?:\.([^.]+))?$/;
         return re.exec(fileName)[1];
@@ -378,10 +379,39 @@ const chromeapiFilesystem = {
             self.chooseEntryOpenFile(options, callback);
         }
     },
-    /**restoreEntry: function(id, callback) { },
-    isRestorable: function(id, callback) { },
-    retainEntry: function(entry) { },
-    requestFileSystem: function(options, callback) { },
+    restoreEntry: function(id, callback) {
+        this.isRestorable(id, function(isRestorable) {
+            if (isRestorable) {
+                chromeCallbackWithSuccess(this.savedEntries[id], callback);
+            } else {
+                chromeCallbackWithError(`${self.logHeader}This entry can't be restored`, callback);
+            }
+        });
+    },
+    isRestorable: function(id, callback) {
+        if (typeof this.savedEntries[id] !== 'undefined') {
+            chromeCallbackWithSuccess(true, callback);
+        } else {
+            chromeCallbackWithSuccess(false, callback);
+        }
+    },
+    retainEntry: function(entry) {
+        const id = this.savedEntries.length;
+        if (id >= 500) {
+            for (let i=0 ; i<500 ; i++) {
+                if (i < 499) {
+                    this.savedEntries[i] = this.savedEntries[i+1];
+                } else {
+                    this.savedEntries[i] = entry;
+                }
+            }
+            return 499;
+        } else {
+            this.savedEntries[id] = entry;
+            return id;
+        }
+    },
+    /**requestFileSystem: function(options, callback) { },
     getVolumeList: function(callback) { },*/
 };
 
