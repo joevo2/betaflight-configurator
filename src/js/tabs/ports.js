@@ -184,7 +184,7 @@ TABS.ports.initialize = function (callback, scrollPosition) {
         var port_configuration_template_e = $('#tab-ports-templates .portConfiguration');
 
         for (var portIndex = 0; portIndex < SERIAL_CONFIG.ports.length; portIndex++) {
-            let portIdentifierE = portIdentifierTemplateE.clone();
+            const portIdentifierE = portIdentifierTemplateE.clone();
             var port_configuration_e = port_configuration_template_e.clone();
             var serialPort = SERIAL_CONFIG.ports[portIndex];
 
